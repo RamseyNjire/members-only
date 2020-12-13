@@ -1,6 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>Secret Posts</h1>
+
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag("hooded-man.jpg", alt: "hooded-man", class: "media-object img-fluid img-rounded") %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Media heading</h4>
+    ...
+  </div>
+</div>
 
 <table>
   <thead>
@@ -15,12 +27,10 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.author %></td>
+        <% if user_signed_in? %>
+          <td><%= post.user.name %></td>
+        <% end %>
         <td><%= post.content %></td>
-        <td><%= post.user_id %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
