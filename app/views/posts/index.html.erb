@@ -2,40 +2,21 @@
 
 <h1>Secret Posts</h1>
 
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <%= image_tag("hooded-man.jpg", alt: "hooded-man", class: "media-object img-fluid img-rounded") %>
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Media heading</h4>
-    ...
-  </div>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Content</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
+<div class="posts-container">
+  <% @posts.each do |post| %>
+    <div class="media">
+      <div class="media-left">
+        <%= image_tag("hooded-man.jpg", alt: "hooded-man", class: "media-object img-fluid profile-image") %>
+      </div>
+      <div class="media-body">
         <% if user_signed_in? %>
-          <td><%= post.user.name %></td>
+          <h4 class="media-heading"><%= post.user.name %></h4>
+        <% else %>
+          <h4 class="media-heading">Secret Author</h4>
         <% end %>
-        <td><%= post.content %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+        <%= post.content %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to 'New Post', new_post_path, class: "new-post-link" %>
+</div>
