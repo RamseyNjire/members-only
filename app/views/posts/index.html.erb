@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Secret Posts</h1>
+
+<div class="posts-container">
+  <% @posts.each do |post| %>
+    <div class="media">
+      <div class="media-left">
+        <%= image_tag("hooded-man.jpg", alt: "hooded-man", class: "media-object img-fluid profile-image") %>
+      </div>
+      <div class="media-body">
+        <% if user_signed_in? %>
+          <h4 class="media-heading"><%= post.user.name %></h4>
+        <% else %>
+          <h4 class="media-heading">Secret Author</h4>
+        <% end %>
+        <%= post.content %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to 'New Post', new_post_path, class: "new-post-link" %>
+</div>

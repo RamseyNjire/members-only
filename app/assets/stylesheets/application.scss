@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body {
+  background: black;
+  color: white;
+  font-family: 'Righteous', sans-serif;
+
+  .content-container {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .actions {
+    input {
+      background: gray;
+      border: none;
+      border-radius: 5px;
+      height: 32px;
+      width: 100%;
+    }
+  }
+
+  .field {
+    input {
+      color: black;
+    }
+  }
+}

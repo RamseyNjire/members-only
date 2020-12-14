@@ -1,0 +1,64 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1 {
+  // border: 1px solid gray;
+  width: 50%;
+  margin: auto;
+}
+
+.new-post {
+  text-align: center;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .media {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+
+    .profile-image {
+      height: 64px;
+      width: 64px;
+      border-radius: 50%;
+    }
+  }
+
+  .new-post-link {
+    width: 50%;
+  }
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      color: black;
+    }
+  }
+
+  .submit-button {
+    background: gray;
+    border: none;
+    border-radius: 5px;
+    height: 32px;
+    width: 100%;
+  }
+}
